@@ -3,5 +3,5 @@
 @section('title', 'Landing Page')
 
 @section('content')
-    @include('LandingPage.hero')
+    @include('LandingPage.Hero')
 @endsection

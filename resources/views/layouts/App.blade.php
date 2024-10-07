@@ -12,7 +12,7 @@
 </head>
 <body>
     @include('Shared.Header')
-    
+
     <main>
         @yield('content')
     </main>
