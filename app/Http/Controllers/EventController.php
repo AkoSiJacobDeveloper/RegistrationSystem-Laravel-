@@ -11,7 +11,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all(); // Fetch all events from the database
-        return view('events.index', compact('events')); // Pass events to the view
+        return view('HomePage.Home', compact('events')); // Pass events to the view
     }
 
     // Show the form for creating a new event
@@ -39,7 +39,7 @@ class EventController extends Controller
         Event::create($request->all());
 
         // Redirect back to the event index with a success message
-        return redirect()->route('Events.Index')->with('success', 'Event created successfully!');
+        return redirect()->route('home')->with('success', 'Event created successfully!');
     }
 
     // Display the specified event
@@ -53,7 +53,7 @@ class EventController extends Controller
     public function edit(string $id)
     {
         $event = Event::findOrFail($id); // Find the event by ID or fail
-        return view('events.edit', compact('event')); // Load the edit view with event data
+        return view('Events.Edit', compact('event')); // Load the edit view with event data
     }
 
     // Update the specified event in the database
@@ -77,7 +77,7 @@ class EventController extends Controller
         $event->update($request->all());
 
         // Redirect to the event index with a success message
-        return redirect()->route('Events.Index')->with('success', 'Event updated successfully!');
+        return redirect()->route('HomePage.Home')->with('success', 'Updated Successfully!');
     }
 
     // Remove the specified event from the database
@@ -87,6 +87,6 @@ class EventController extends Controller
         $event->delete(); // Delete the event record
 
         // Redirect back to the event index with a success message
-        return redirect()->route('Events.Index')->with('success', 'Event deleted successfully!');
+        return redirect()->route('home')->with('success', 'Event deleted successfully!');
     }
 }

@@ -6,7 +6,7 @@
     <div class="mb-3">
         <a href="{{ route('events.create') }}" class="btn btn-primary">Add Event</a>
     </div>
-    
+
     <table>
         <thead>
             <tr>
@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($events as $event) <!-- Assuming you have a collection of events passed to the view -->
+            @foreach($events as $event)
             <tr>
                 <td>{{ $event->name }}</td>
                 <td>{{ $event->date }}</td>
@@ -32,18 +32,16 @@
                 <td>${{ $event->registration_fee }}</td>
                 <td>{{ $event->status }}</td>
                 <td>{{ $event->contact }}</td>
-                <td>
+                <td class="text-center">
                     <!-- Edit Button -->
-                    <a href="{{ route('events.edit', $event->id) }}" class="btn btn-warning">Edit</a>
-                    
+                    <a href="{{ route('events.edit', $event->id) }}" class="btn btn-warning py-2">Edit</a>
+
                     <!-- Delete Button -->
                     <form action="{{ route('events.destroy', $event->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this event?');">Delete</button>
+                        <button type="submit" class="btn btn-danger py-2" onclick="return confirm('Are you sure you want to delete this event?');">Delete</button>
                     </form>
-                    
-                    <button class="submit">Book Now</button>
                 </td>
             </tr>
             @endforeach

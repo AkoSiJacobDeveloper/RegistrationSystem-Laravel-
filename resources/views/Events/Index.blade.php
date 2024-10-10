@@ -30,13 +30,14 @@
                     <td>{{ $event->status }}</td>
                     <td>{{ $event->contact }}</td>
                     <td>
-                        <a href="{{ route('events.edit', $event->id) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('events.edit', $event->id) }}" class="btn btn-warning py-2">Edit</a>
+
+                        <!-- Delete Button -->
                         <form action="{{ route('events.destroy', $event->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this event?');">Delete</button>
+                            <button type="submit" class="btn btn-danger py-2" onclick="return confirm('Are you sure you want to delete this event?');">Delete</button>
                         </form>
-                        <button class="btn btn-info">Book Now</button>
                     </td>
                 </tr>
             @endforeach

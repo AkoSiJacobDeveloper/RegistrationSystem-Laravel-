@@ -36,6 +36,7 @@ $secondary-font: 'Nunito';
 * {
     font-family: $primary-font;
     box-sizing: border-box;
+
 }
 
 header {
@@ -133,5 +134,26 @@ header {
         button {
             @extend %joinBtn;
         }
+    }
+}
+
+.about-container {
+    width: 25%;
+    background-color: crimson;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.about-contents {
+    .about-text {
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+    }
+    .holder {
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        width: 250px;
+        height: 400px;
+        margin: 5px;
+
     }
 }

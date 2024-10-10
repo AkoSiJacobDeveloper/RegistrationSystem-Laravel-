@@ -41,7 +41,7 @@
             <label for="contact">Contact</label>
             <input type="text" class="form-control" id="contact" name="contact" required>
         </div>
-        <button type="submit" class="btn btn-success">Add Event</button>
+        <button type="submit" class="btn btn-success mt-3">Add Event</button>
     </form>
 </div>
 @endsection
